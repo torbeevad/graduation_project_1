@@ -1,33 +1,54 @@
 let myMap;
+let coords;
+ymaps.ready(init);
 
 function init() {
     myMap = new ymaps.Map("map", {
         center: [59.93, 30.30],
-        zoom: 11,
-        controls: [],
-    });
-
-    let coords = [
-            [59.94, 30.38],
-            [59.91, 30.50],
-            [59.88, 30.31],
-            [59.97, 30.31],
-        ],
-        myCollection = new ymaps.GeoObjectCollection({}, {
-            draggable: false,
+        zoom: 12,
+        controls: ['zoomControl']
+    }),
+        myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+            hintContent: 'Собственный значок метки',
+            balloonContent: 'Это красивая метка'
+        }, {
+            // Опции.
+            // Необходимо указать данный тип макета.
             iconLayout: 'default#image',
-            iconImageHref: './dev/images/pin.svg',
+            // Своё изображение иконки метки.
+            iconImageHref: '/dev/images/pin.svg',
+            // Размеры метки.
             iconImageSize: [42, 42],
-            iconImageOffset: [-35, -52]
-        });
-
-    for (let i = 0; i < coords.length; i++) {
-        myCollection.add(new ymaps.Placemark(coords[i]));
-    }
-
-    myMap.geoObjects.add(myCollection);
-
-    myMap.behaviors.disable('scrollZoom');
+            // Смещение левого верхнего угла иконки относительно
+            // её "ножки" (точки привязки).
+            iconImageOffset: [-21, -42]
+        })
+    myMap.geoObjects.add(myPlacemark)
+    addListeners()
 }
 
-ymaps.ready(init);
+function addListeners() {
+
+    openModal()
+}
+
+
+function openModal() {
+    myMap.events.add('click', (event) => {
+
+        let posX = event.getSourceEvent().originalEvent.domEvent.originalEvent.clientX
+        let posY = event.getSourceEvent().originalEvent.domEvent.originalEvent.clientY
+
+        const modal = document.getElementById('modal')
+
+        coords = event.get('coords');
+
+        modal.style.display = 'block'
+        modal.style.top = `${posY}px`
+        modal.style.left = `${posX}px`
+    })
+    const form = document.getElementById('rewiew')
+    form.addEventListener('submit', (e) => {
+        e.preventDefault()
+    })
+}
