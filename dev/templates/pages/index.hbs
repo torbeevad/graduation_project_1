@@ -1,12 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title> 
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
 </head>
+
 <body>
-    <img src="../../images/5.jpg" alt="">
+<div class="map" id="map">
+</div>
+
+<div class="modal" id="modal">
+    <div class="modal__header">
+        <h2 class="modal__title">Отзыв:</h2>
+        <div class="modal__close" id="close">
+            <svg class="close-icon">
+                <use xlink:href="./dev/images/close.svg"></use>
+            </svg>
+        </div>
+    </div>
+    <form action="" class="rewiew">
+        <input type="text" placeholder="Укажите ваше имя" class="rewiew__name rewiew__row">
+        <input type="text" placeholder="Укажите место" class="rewiew__target rewiew__row">
+        <textarea type="text" placeholder="Оставить отзыв" class="rewiew__text"></textarea>
+        <button class="rewiew__send-btn">Добавить</button>
+    </form>
+</div>
+
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 </body>
 </html>

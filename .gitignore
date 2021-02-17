@@ -5,7 +5,6 @@
 !yarn.lock
 *.log
 out/
-dist/
 node_modules/
 coverage/
 .eslintcache
