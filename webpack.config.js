@@ -7,7 +7,7 @@ const {getTemplates, getPathByFolder} = require('./scripts/helpers')
 console.log(getPathByFolder('./dev/js/entry'))
 console.log(getTemplates(getPathByFolder('./dev/templates/pages')))
 module.exports = (env, option) => {
-    console.log(env, option)
+    // noinspection JSUnusedGlobalSymbols
     return {
         entry: getPathByFolder('./dev/js/entry'),
         output: {

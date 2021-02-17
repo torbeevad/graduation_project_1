@@ -13,22 +13,61 @@
 </div>
 
 <div class="modal" id="modal">
+    <ul class="review__list">
+        <li class="review__item" id="review__item">
+            <div class="review__item--row">
+                <span class="review__item--name" id="review__item--name">Алексей</span>
+                <span class="review__item--target" id="review__item--target">Магазин</span>
+            </div>
+            <div class="review__item--text" id="review__item--text">та пиздец</div>
+        </li>
+        <li class="review__item">
+            <div class="review__item--row">
+                <span class="review__item--name">Алексей</span>
+                <span class="review__item--target">Магазин</span>
+            </div>
+            <div class="review__item--text">та пиздец</div>
+        </li>
+        <li class="review__item">
+            <div class="review__item--row">
+                <span class="review__item--name">Алексей</span>
+                <span class="review__item--target">Магазин</span>
+            </div>
+            <div class="review__item--text">та пиздец</div>
+        </li>
+        <li class="review__item">
+            <div class="review__item--row">
+                <span class="review__item--name">Алексей</span>
+                <span class="review__item--target">Магазин</span>
+            </div>
+            <div class="review__item--text">та пиздец</div>
+        </li>
+        <li class="review__item">
+            <div class="review__item--row">
+                <span class="review__item--name">Алексей</span>
+                <span class="review__item--target">Магазин</span>
+            </div>
+            <div class="review__item--text">та пиздец</div>
+        </li>
+    </ul>
     <div class="modal__header">
         <h2 class="modal__title">Отзыв:</h2>
         <div class="modal__close" id="close">
             <svg class="close-icon">
-                <use xlink:href="../../../dev/images/close.svg"></use>
+                <use xlink:href="/dev/images/close.svg#sprite-close"></use>
             </svg>
         </div>
     </div>
-    <form action="" class="rewiew" id="rewiew">
-        <input type="text" placeholder="Укажите ваше имя" class="rewiew__name rewiew__row">
-        <input type="text" placeholder="Укажите место" class="rewiew__target rewiew__row">
-        <textarea placeholder="Оставить отзыв" class="rewiew__text"></textarea>
-        <button type="submit" class="rewiew__send-btn">Добавить</button>
+    <form action="" class="review" id="review">
+        <input type="text" placeholder="Укажите ваше имя" class="review__name review__row" id="review__name">
+        <input type="text" placeholder="Укажите место" class="review__target review__row" id="review__target">
+        <textarea type="text" placeholder="Оставить отзыв" class="review__text" id="review__text"></textarea>
+        <button type="submit" class="review__send-btn">Добавить</button>
     </form>
 </div>
 
 <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 </body>
 </html>
+
+
