@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Reviewer</title>
 </head>
 
 <body>
@@ -13,14 +13,14 @@
 </div>
 
 <div class="modal" id="modal">
-    <ul class="review__list">
-        <li class="review__item" id="review__item">
-            <div class="review__item--row">
-                <span class="review__item--name" id="review__item--name">Алексей</span>
-                <span class="review__item--target" id="review__item--target">Магазин</span>
-            </div>
-            <div class="review__item--text" id="review__item--text">как бы коментарий</div>
-        </li>
+    <ul class="review__list" id="review__list">
+<!--        <li class="review__item">-->
+<!--            <div class="review__item--row">-->
+<!--                <span class="review__item--name" id="name">Алексей</span>-->
+<!--                <span class="review__item--target" id="target">Магазин</span>-->
+<!--            </div>-->
+<!--            <div class="review__item--text" id="comment">Как бы коментарий.</div>-->
+<!--        </li>-->
     </ul>
     <div class="modal__header">
         <h2 class="modal__title">Отзыв:</h2>
@@ -30,10 +30,10 @@
             </svg>
         </div>
     </div>
-    <form action="" class="review" id="review">
-        <input type="text" placeholder="Укажите ваше имя" class="review__name review__row" id="review__name">
-        <input type="text" placeholder="Укажите место" class="review__target review__row" id="review__target">
-        <textarea type="text" placeholder="Оставить отзыв" class="review__text" id="review__text"></textarea>
+    <form class="review" id="review">
+        <input type="text" placeholder="Укажите ваше имя" class="review__name review__row" name="nameForm">
+        <input type="text" placeholder="Укажите место" class="review__target review__row" name="targetForm">
+        <textarea type="text" placeholder="Оставить отзыв" class="review__text" name="commentForm"></textarea>
         <button type="submit" class="review__send-btn">Добавить</button>
     </form>
 </div>

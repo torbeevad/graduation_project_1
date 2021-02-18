@@ -9,7 +9,7 @@ function init() {
         controls: ['zoomControl', 'searchControl']
     })
 
-        addListeners()
+    addListeners()
 }
 
 function addListeners() {
@@ -19,10 +19,10 @@ function addListeners() {
             hintContent: 'Собственный значок метки',
             balloonContent: '<li class="review__item" id="review__item">\n' +
                 '                <div class="review__item--row">\n' +
-                '                    <span class="review__item--name" id="review__item--name"></span>\n' +
-                '                    <span class="review__item--target" id="review__item--target"></span>\n' +
+                '                    <span class="review__item--name" id="name"></span>\n' +
+                '                    <span class="review__item--target" id="target"></span>\n' +
                 '                </div>\n' +
-                '            <div class="review__item--text" id="review__item--text"></div>\n' +
+                '            <div class="review__item--text" id="comment"></div>\n' +
                 '            </li>'
         }, {
             // Опции.
@@ -39,13 +39,26 @@ function addListeners() {
         openModal(event)
     })
 
+    let nameGet;
+    let targetGet;
+    let commentGet;
+    let reviewList = document.getElementById('review__list')
+
     const form = document.getElementById('review')
     form.addEventListener('submit', (e) => {
         e.preventDefault()
+        nameGet = review.elements.nameForm.value;
+        targetGet = review.elements.targetForm.value;
+        commentGet = review.elements.commentForm.value;
 
-        review.reset()
+        console.log(nameGet, targetGet, commentGet);
+        reviewList.insertAdjacentHTML('afterbegin', '<li class="review__item"><div class="review__item--row"><span class="review__item--name" id="nameTake"></span><span class="review__item--target" id="targetTake"></span></div><div class="review__item--text" id="commentTake"></div></li>')
+        nameTake.textContent = nameGet;
+        targetTake.textContent = targetGet;
+        commentTake.textContent = commentGet;
         modal.style.display = 'none'
         myMap.geoObjects.add(myPlacemark)
+        review.reset()
     })
 }
 
