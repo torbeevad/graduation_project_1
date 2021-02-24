@@ -1,0 +1,22 @@
+<!doctype html><html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1"><meta http-equiv="X-UA-Compatible" content="ie=edge"><title>Reviewer</title><script defer="defer" src="index.js"></script><link href="index.css" rel="stylesheet"></head><body><div class="map" id="map"></div><script type="template" id="form-template"><div class="modal" id="modal">
+        <ul class="review__list" id="review__list"></ul>
+        <div class="modal__header">
+            <h2 class="modal__title">Отзыв:</h2>
+        </div>
+        <form class="review" id="review">
+            <input type="text" placeholder="Укажите ваше имя" class="review__name review__row" name="nameForm"
+                   id="form-review-name">
+            <input type="text" placeholder="Укажите место" class="review__target review__row" name="targetForm"
+                   id="form-review-place">
+            <textarea placeholder="Оставить отзыв" class="review__text" name="commentForm"
+                      id="form-review-text"></textarea>
+            <div class="error" id="error">Заполните, пожалуйста, все поля</div>
+            <button type="submit" class="review__send-btn" id="submit-review-button">Добавить</button>
+        </form>
+    </div></script><script type="template" id="review-item"><li class="review__item">
+        <div class="review__item--row">
+            <span class="review__item--name" id="review-name"></span>
+            <span class="review__item--target" id="review-place"></span>
+        </div>
+        <div class="review__item--text" id="review-text"></div>
+    </li></script><script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script></body></html>
