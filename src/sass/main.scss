@@ -27,9 +27,6 @@ li {
   min-height: 350px;
   background: #fff;
   border-radius: 5px;
-  position: absolute;
-  z-index: 100;
-  display: none;
   padding: 25px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
@@ -72,9 +69,12 @@ li {
   right: 2%;
   height: 16px;
   width: 16px;
-}
-.modal__close:hover {
-  cursor: pointer;
+
+  &
+  :hover {
+    cursor: pointer;
+  }
+
 }
 
 .close-icon {
@@ -96,9 +96,12 @@ li {
   border-radius: 4px;
   outline: none;
   color: black;
-}
-.review__row:focus {
-  border: 1px solid #1371C8;
+
+  &
+  :focus {
+    border: 1px solid #1371C8;
+  }
+
 }
 
 .review__text {
@@ -110,9 +113,12 @@ li {
   border-radius: 4px;
   padding: 2%;
   outline: none;
-}
-.review__text:focus {
-  border: 1px solid #1371C8;
+
+  &
+  :focus {
+    border: 1px solid #1371C8;
+  }
+
 }
 
 .review__send-btn {
@@ -127,4 +133,8 @@ li {
   cursor: pointer;
 }
 
-/*# sourceMappingURL=main.css.map */
+.error {
+  display: none;
+  color: red;
+  margin-bottom: 10px;
+}
